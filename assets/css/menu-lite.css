@@ -1,0 +1,63 @@
+
+/**********overlay**********/
+.overlay{
+	height:0px;
+	width:0px;
+	background-color:#000;
+	opacity:0;
+	position:fixed!important;
+	z-index:4;
+	overflow:auto;
+	transition: width 0s, height 0s, opacity 4s;
+}
+.overlay.overlayOpen{
+	width:100%;
+	height:100%;
+	opacity:.5;
+	cursor: pointer;
+	transition: width 0s, height 0s, opacity .4s;
+}
+
+#burger-menu{
+	display:none;
+}
+@media screen and (max-width: 520px) {
+	#burger-menu{
+		cursor:pointer;
+		display: inline-block;
+		position: fixed;
+		top:1em;
+		right:1em;
+		z-index: 9;
+	}
+}
+#menuMobile{
+	height:100%;
+	width:0px;
+	background-color:red;
+	position:fixed!important;
+	z-index:5;
+	overflow:auto;
+}
+
+#menuMobile.menuMobileOpen{
+	transition: all .4s;
+	width:280px;
+}
+#menuMobile #times-menu{
+	cursor: pointer;
+	font-size: 20px;
+	color:#FFF;
+	float:right;
+	padding:.5em;
+}
+#menuMobile .menu-item{
+	padding:.5em 2em;
+}
+#menuMobile .menu-item a{
+	color:#FFF;
+	font-size:1.2em;
+}
+#menuMobile .menu-item .active:not(.current_page_parent)>a{
+	font-style: italic;
+}
